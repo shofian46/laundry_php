@@ -27,7 +27,7 @@ if(isset($_POST['back'])){
 <head>
   <meta charset="UTF-8">
   <title>Struk Transaksi</title>
-  <link rel="stylesheet" type="text/css" href="./asset/print.css" media="print">
+  <link rel="stylesheet" type="text/css" href="template/assets/css/print.css" media="print">
   <style>
     /* Optional: Tambahan gaya untuk preview sebelum cetak */
     body {
@@ -108,9 +108,6 @@ if(isset($_POST['back'])){
 <body>
 
   <div class="receipt">
-  <div class="logo-container">
-  <?php include './inc/logo.php'; ?>
-  </div>
 
   <p class="item-block mt-3">Order Code: <?= $rowDetail['order_code'] ?></p>
   <p class="item-block">Order Date: <?= $rowDetail['order_date'] ?></p>
@@ -130,9 +127,9 @@ if(isset($_POST['back'])){
 
   <hr>
   <div class="summary">
-    <p style="text-align:right;">Total: Rp <?= number_format($rowDetail['total'], 0, ',', '.') ?></p>
-    <p style="text-align:right;">Dibayar: Rp <?= number_format($rowDetail['order_pay'], 0, ',', '.') ?></p>
-    <p style="text-align:right;">Kembalian: Rp <?= number_format($rowDetail['order_change'], 0, ',', '.') ?></p>
+    <p style="text-align:right;">Total: Rp <?= $rowDetail['total'] ?></p>
+    <p style="text-align:right;">Dibayar: Rp <?= $rowDetail['order_pay'] ?></p>
+    <p style="text-align:right;">Kembalian: Rp <?= $rowDetail['order_change'] ?></p>
   </div>
   <hr>
   <p style="text-align:center">Terima kasih 🙏</p>
